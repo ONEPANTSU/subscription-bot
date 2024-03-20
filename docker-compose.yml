@@ -26,5 +26,5 @@ services:
       - .env
     depends_on:
       - db
-    command: sh -c "wait-for-it --timeout=30 db:${DB_PORT} \
-             -- alembic upgrade head && python3 run.py"
+    command: ["wait-for-it", "--timeout=60", "db:${DB_PORT}",
+              "--", "sh", "-c", "alembic upgrade head && python3 run.py"]
