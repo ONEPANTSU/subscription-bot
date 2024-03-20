@@ -44,7 +44,7 @@ jobs:
           echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-agent bash -c "\
             ssh-add ../private.key && \
             ssh -o StrictHostKeyChecking=no -tt ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }} -p ${{ env.SERVER_PORT }} '\
-              { cd ${{ env.SERVER_PATH }}/${{ WORKING_DIR }} || \
+              { cd ${{ env.SERVER_PATH }}/${{ env.WORKING_DIR }} || \
               cd ${{ env.SERVER_PATH }} && \
               git clone ${{ GIT_URL }}; } && \
               cd ${{ WORKING_DIR }}; \
