@@ -1,5 +1,6 @@
 venv/
 .idea/
 .git/
+*.pyc
 
 README.md
