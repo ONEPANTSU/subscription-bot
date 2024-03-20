@@ -2,9 +2,9 @@ name: Lint checking
 
 on:
   push:
-    branches: [ main-banana ]
+    branches: [ main ]
   pull_request:
-    branches: [ main-banana ]
+    branches: [ main ]
 
 jobs:
   build:
